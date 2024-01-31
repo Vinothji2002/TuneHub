@@ -13,12 +13,10 @@ public class PlaylistServiceImplementation implements PlaylistService {
 	PlaylistRepository repo;
 	@Override
 	public void addPlaylist(Playlist playList) {
-		// TODO Auto-generated method stub
 		repo.save(playList);
 	}
 	@Override
 	public List<Playlist> fetchAllPlaylist() {
 		return repo.findAll();
 	}
-
 }
