@@ -1,0 +1,76 @@
+<!-- newSong.html -->
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	body {
+	    font-family: 'Arial', sans-serif;
+	    background-color: #303030;
+	    color: #FFFFFF;
+	    margin: 0;
+	    padding: 0;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    height: 100vh;
+	}
+	
+	form {
+	    background-color: #FFFFFF;
+	    color: #303030;
+	    padding: 20px;
+	    width: 300px;
+	    border-radius: 8px;
+	    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+	
+	label {
+	    color: #FF4081;
+	    display: block;
+	    margin-bottom: 5px;
+	}
+	
+	input[type="text"] {
+	    width: 100%;
+	    padding: 10px;
+	    margin-bottom: 10px;
+	    box-sizing: border-box;
+	}
+	
+	input[type="submit"] {
+	    background-color: #FF4081;
+	    color: #FFFFFF;
+	    border: none;
+	    border-radius: 5px;
+	    padding: 12px;
+	    cursor: pointer;
+	    font-size: 16px;
+	    width: 100%;
+	}
+	
+	input[type="submit"]:hover {
+	    background-color: #FF6347;
+	}
+	
+</style>
+</head>
+<body>
+	<form action="addSong" method="post">
+		<label>Song Name:</label>
+		<input type="text" name="name"/>
+		<br>
+		<label>Song Artist:</label>
+		<input type="text" name="artist"/>
+		<br>
+		<label>Song Genre:</label>
+		<input type="text" name="genre"/>
+		<br>
+		<label>Song Link:</label>
+		<input type="text" name="link"/>
+		<br>
+		<input type="submit" value="Add Song" />
+	</form>
+</body>
+</html>

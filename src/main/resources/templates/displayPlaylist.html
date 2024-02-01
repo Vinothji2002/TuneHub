@@ -1,0 +1,89 @@
+<!-- displayPlaylist.html -->
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #303030;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px;
+}
+
+thead {
+    background-color: #FF4081;
+    color: #FFFFFF;
+}
+
+th, td {
+    border: 1px solid #303030;
+    padding: 8px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #454545;
+}
+
+tbody tr:hover {
+    background-color: #606060;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+audio {
+    width: 100%;
+    visibility: visible;
+}
+#playlist{
+	width:300px;
+}
+#song-name{
+	text-align: left;
+}
+</style>
+</head>
+<body>
+	<table border>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Songs</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="plist:${allPlaylists}">
+				<td th:text="${plist.name}"></td>
+				<td id="playlist">
+					<ul th:each="song:${plist.songs}">
+						<li th:text="${song.name}" id="song-name"></li>
+						<li><audio controls th:src="${song.link}"></audio>	</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	
+	</table>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thmeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	body {
+    font-family: 'Arial', sans-serif;
+    background-color: #303030;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top:30px;
+}
+
+.buttons {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #FF4081;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+button a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #FF6347;
+}
+
+</style>
+</head>
+<body>
+<h1>Admin Home</h1>
+<div class="buttons">
+	<button>
+		<a href="newSong">Add a new song</a>
+	</button>
+	<br>
+	<button>
+		<a href="viewSongs">View all songs</a>
+	</button>
+	<br>
+	<button>
+		<a href="createPlaylist">Create playlist</a>
+	</button>
+	<br>
+	<button>
+		<a href="viewPlaylist">View all playlist</a>
+	</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #303030;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+    align-self: flex-start; 
+    margin-left:10px;
+}
+
+.notpremium{
+	padding:10px; 
+}
+
+form {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #FF4081;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 120px;
+}
+
+button:hover {
+    background-color: #FF6347;
+}
+
+table {
+    border-collapse: collapse;
+    width: 85%;
+	margin: 0 auto;
+}
+
+.premium{
+	margin: 0 auto;
+}
+
+thead {
+    background-color: #FF4081;
+    color: #FFFFFF;
+}
+
+th, td {
+    border: 1px solid #303030;
+    padding: 8px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #454545;
+}
+
+tbody tr:hover {
+    background-color: #606060;
+}
+
+audio {
+    width: 100%;
+    visibility: visible;
+}
+
+.song {
+    width: 250px;
+}
+
+.songname {
+    width: 150px;
+}
+
+</style>
+</head>
+<body>
+	<h1>Customer Home</h1>
+	<div th:unless="${isPremium}" class="notpremium">
+		<form action="pay" method="get">
+			<button type="submit">Get Premium</button>
+		</form>
+		<form action="logout" method="get">
+			<button type="submit">Logout</button>
+		</form>
+	</div>
+	<div th:if="${isPremium}" class="premium">
+		<div>
+			<table border=1>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Artist</th>
+						<th>Genre</th>
+						<th>Play</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="song:${songs}">
+						<td th:text="${song.name}" class="songname"></td>
+						<td th:text="${song.artist}"></td>
+						<td th:text="${song.genre}"></td>
+						<td class="song"><audio controls th:src="${song.link}"></audio>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+</body>
+</html>

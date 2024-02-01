@@ -1,0 +1,76 @@
+<!-- displaySongs.html -->
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+	body {
+    font-family: 'Arial', sans-serif;
+    background-color: #303030;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+	}
+
+	table {
+	    border-collapse: collapse;
+	    width: 80%;
+	    margin: 20px;
+	}
+	
+	thead {
+	    background-color: #FF4081;
+	    color: #FFFFFF;
+	}
+	
+	th, td {
+	    border: 1px solid #303030;
+	    padding: 8px;
+	    text-align: center;
+	}
+	
+	tbody tr:nth-child(even) {
+	    background-color: #454545;
+	}
+	
+	tbody tr:hover {
+	    background-color: #606060;
+	}
+	
+	audio {
+	    width: 100%;
+	    visibility: visible;
+	}
+	#song{
+		width:250px;
+	}
+</style>
+</head>
+<body>
+	<table border>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Artist</th>
+				<th>Genre</th>
+				<th>Play</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="song:${songs}">
+				<td th:text="${song.name}"></td>
+				<td th:text="${song.artist}"></td>
+				<td th:text="${song.genre}"></td>
+				<td id="song"> 
+					<audio controls th:src="${song.link}"></audio>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
