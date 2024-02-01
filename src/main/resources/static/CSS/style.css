@@ -1,13 +1,38 @@
 @charset "ISO-8859-1";
-body{
- 	background: linear-gradient(to right, white,skyblue,blue);
+
+body {
+	background-color: #303030;
+	color: #FFFFFF;
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
 }
-a{
- 	text-decoration: none; 
- 	color: white;
+
+h1 {
+	color: white;
+	text-align: center;
+	padding: 20px;
 }
-.buttons{
-  border: 2px solid blue;
-  padding: 5px;
-  background-color: blue;
+
+nav {
+	text-align: center;
+	margin-top: 20px;
+	padding: 5px;
+}
+
+.buttons {
+	background-color: #FF4081;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 10px;
+	width: 90px;
+	padding: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.buttons:hover {
+	background-color: #FF6347;
 }
